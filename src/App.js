@@ -12,17 +12,18 @@ import speechbubble from './images/speechbubble.png';
 
 function App() {
   const [value, setValue] = useState("");
+  const [res, setRes] = useState("No Sentiment 😐")
 
   const handleClick = () => {
     if(value!== ""){
-      axios.post("https://sentiment-backend.herokuapp.com/", {"sentence": value})
+      axios.post("https://sentiment-backend.herokuapp.com/sentiment", {"sentence": value})
       .then((response) => {
         console.log(response);
-        document.getElementsByClassName("sentiment-text")[0].innerText = response["data"]["sentiment"];
+        setRes(response.data.sentiment)
       })
       .catch((err) => {
         console.log(err);
-        document.getElementsByClassName("sentiment-text")[0].innerText = "Error"
+        setRes("Error")
       });
     }
   }
@@ -34,7 +35,7 @@ function App() {
   return (
     <div style={{height:"100vh", width:"100vw", alignItems:"center", justifyContent:"center", textAlign:"center", backgroundImage: `url(${background})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', display:"table-cell", verticalAlign: "middle", horizontalAlign:"middle"}}>
         <Input transparent onChange={handleValueChange} action={{color: 'teal', onClick: () => handleClick(), content: "Calculate Sentiment! 😤"}} placeholder='Type in some text...' style={{border:"2px solid #fff", padding:"10px", borderRadius: "5px"}} />
-        <p className="sentiment-text" id = "result">No Sentiment 😐</p>
+  <p className="sentiment-text" id = "result">{res}</p>
         <p id = "title">Sentiment Analysis Web App 😂👌</p>
         <img src = {logo} id = "logo"></img>
         <a href = "https://www.youtube.com/channel/UCn9Ir-KFtIWSntk6RzGE1-A"><img src = {youtube} id = "youtube"></img></a>
