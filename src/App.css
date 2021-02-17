@@ -1,0 +1,55 @@
+/* styles are inline in App.js*/
+/* idek why i have an App.css*/
+/* if i can transfer the styles here, that would be pog*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
+
+#logo {
+    height: 150px;
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+}
+
+#title {
+    position: relative;
+    top: -225px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+}
+
+#result {
+    position: relative;
+    padding-top: 25px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+
+#youtube {
+    height: 50px;
+    position: absolute;
+    bottom: 10px;
+    left: 175px;
+}
+
+#linkedin {
+    height: 30px;
+    position: absolute;
+    bottom: 20px;
+    left: 250px;
+}
+
+#github {
+    height: 30px;
+    position: absolute;
+    bottom: 20px;
+    left: 300px;
+}
+
+#speechbubble {
+    height: 150px;
+    position: absolute;
+    bottom: 90px;
+    left: 135px;
+}
