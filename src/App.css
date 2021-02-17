@@ -58,6 +58,8 @@ input {
     color:#fff !important;
 }
 
+
 @media only screen and (max-width: 768px) {
     #title {font-size: 30px;}
+    .background {background-position: center;}
 }
