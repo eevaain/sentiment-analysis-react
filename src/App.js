@@ -15,7 +15,7 @@ function App() {
 
   const handleClick = () => {
     if(value!== ""){
-      axios.post("https://sentiment-analysis-evan.herokuapp.com/", {"sentence": value})
+      axios.post("https://sentiment-backend.herokuapp.com/", {"sentence": value})
       .then((response) => {
         console.log(response);
         document.getElementsByClassName("sentiment-text")[0].innerText = response["data"]["sentiment"];
