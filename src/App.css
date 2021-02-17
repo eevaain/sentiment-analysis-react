@@ -53,3 +53,7 @@
     bottom: 90px;
     left: 135px;
 }
+
+input {
+    color:#fff !important;
+}
